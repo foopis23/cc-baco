@@ -1,5 +1,5 @@
 -- This is a one time run script to setup the CC OS to be more linux like
-local startup_script_url = "https://raw.githubusercontent.com/foopis23/Unity-Callback-Events/master/cc-baco/startup-cc-os.lua"
+local startup_script_url = "https://raw.githubusercontent.com/foopis23/cc-baco/master/startup-cc-os.lua"
 
 textutils.slowPrint("Setting up...")
 
