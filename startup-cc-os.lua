@@ -112,6 +112,7 @@ shell.setCompletionFunction("rom/programs/fun/advanced/paint.lua", completion.bu
 
 -- custom aliases
 shell.setAlias("restart", "reboot")
+shell.setAlias("edit", "shedit")
 
 -- update os version
 function os.version()

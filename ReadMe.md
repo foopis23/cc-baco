@@ -5,6 +5,7 @@ This is an attempt to improve the out of the box experience of Computer Craft's 
 - Unix style file system
 - Path aliases and auto-completion for `~`
 - Alias `restart` for `reboot`
+- Default editor is [shedit](https://www.computercraft.info/forums2/index.php?/topic/29308-shedit-an-editor-with-proper-syntax-highlighting/)
 
 ## Installation
 ### Using Install Script (Recommended)
