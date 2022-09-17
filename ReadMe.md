@@ -4,6 +4,7 @@ This is an attempt to improve the out of the box experience of Computer Craft's 
 ## Features
 - Unix style file system
 - Path aliases and auto-completion for `~`
+- Alias `restart` for `reboot`
 
 ## Installation
 ### Using Install Script (Recommended)
