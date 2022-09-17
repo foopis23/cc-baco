@@ -62,6 +62,32 @@ shell.resolve = function(path)
 	end
 end
 
+local function printOSHeader()
+	if term.isColour() then
+		promptColour = colours.yellow
+		textColour = colours.white
+		bgColour = colours.black
+	else
+		promptColour = colours.white
+		textColour = colours.white
+		bgColour = colours.black
+	end
+	
+	-- print version
+	term.clear()
+	term.setCursorPos(1,1)
+	term.setBackgroundColor(bgColour)
+	term.setTextColour(promptColour)
+	print(os.version())
+	term.setTextColour(textColour)
+
+	-- print motd
+	-- Show MOTD
+	if settings.get("motd.enable") then
+		shell.run("motd")
+	end
+end
+
 -- update tab completion to include "~"
 shell.setCompletionFunction("rom/programs/cd.lua", completion.build(customCompletion.dir))
 shell.setCompletionFunction("rom/programs/copy.lua", completion.build(
@@ -84,35 +110,16 @@ shell.setCompletionFunction("rom/programs/rename.lua", completion.build(
 shell.setCompletionFunction("rom/programs/type.lua", completion.build(completion.dirOrFile))
 shell.setCompletionFunction("rom/programs/fun/advanced/paint.lua", completion.build(completion.file))
 
-if term.isColour() then
-    promptColour = colours.yellow
-    textColour = colours.white
-    bgColour = colours.black
-else
-    promptColour = colours.white
-    textColour = colours.white
-    bgColour = colours.black
-end
+-- custom aliases
+shell.setAlias("restart", "reboot")
 
 -- update os version
 function os.version()
     return "Baco 1.0 Pre-Alpha"
 end
 
--- print version
-term.clear()
-term.setCursorPos(1,1)
-term.setBackgroundColor(bgColour)
-term.setTextColour(promptColour)
-print(os.version())
-term.setTextColour(textColour)
-
--- print motd
--- Show MOTD
-if settings.get("motd.enable") then
-    shell.run("motd")
-end
-
 -- start in /home
 shell.setDir("/home")
 
+-- print os version and motd
+printOSHeader()
